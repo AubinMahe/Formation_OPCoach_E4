@@ -3,14 +3,18 @@ package com.thalesgroup.rental.ui.views;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
-public class RentalProvider extends LabelProvider implements ITreeContentProvider {
+public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider {
 
 	public static final String LOCATIONS = "Locations";
 	public static final String CUSTOMERS = "Customers";
@@ -94,5 +98,18 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 			return ((RentalObject) element).getName();
 		}
 		return super.getText(element);
+	}
+
+	@Override
+	public Color getForeground(Object element) {
+		if( element instanceof Customer ) {
+			return Display.getCurrent().getSystemColor( SWT.COLOR_BLUE );
+		}
+		return null;
+	}
+
+	@Override
+	public Color getBackground(Object element) {
+		return null;
 	}
 }
