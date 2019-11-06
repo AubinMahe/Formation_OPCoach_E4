@@ -1,13 +1,13 @@
- 
 package com.thalesgroup.rental.ui.views;
 
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
+import java.text.SimpleDateFormat;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -20,8 +20,7 @@ import com.opcoach.training.rental.RentalAgency;
 
 public class RentalPropertyPart {
 
-	private Label rentedObjectLabel, customerNameLabel, startDateLabel, endDateLabel;
-	private Label from, to;
+	private Label rentedObjectLabel, customerNameLabel, from, to;
 
 	@PostConstruct
 	public void createContent(
@@ -67,25 +66,24 @@ public class RentalPropertyPart {
 		Label de = new Label( dateGroup, SWT.BORDER);
 		de.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
 		de.setText("Du : ");
-		
 		from = new Label(dateGroup, SWT.BORDER);
+		from.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		from.setText("15/03/2011");
 		
 		Label au = new Label( dateGroup, SWT.BORDER);
 		au.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
 		au.setText("Au : ");
-		
 		to = new Label(dateGroup, SWT.BORDER);
+		to.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		to.setText("22/03/2011");
-
-		setRental( agency.getRentals().get( agencyIndex ));
 	}
 
-	public void setRental( Rental rental ) {
+	@Inject @Optional
+	public void setRental( @Named(IServiceConstants.ACTIVE_SELECTION) Rental rental ) {
 		rentedObjectLabel.setText( rental.getRentedObject().getName());
 		customerNameLabel.setText( rental.getCustomer().getDisplayName());
-		DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-		from.setText( rental.getStartDate().toString());
-		to.setText( rental.getStartDate().toString());
+		SimpleDateFormat sdf = new SimpleDateFormat();
+		from.setText( sdf.format( rental.getStartDate()));
+		to.setText( sdf.format( rental.getStartDate()));
 	}
 }

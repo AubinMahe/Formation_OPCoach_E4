@@ -6,6 +6,8 @@ import javax.annotation.PostConstruct;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Composite;
 
@@ -17,7 +19,12 @@ public class RentalAgencyView {
 	private TreeViewer agencies;
 
 	@PostConstruct
-	public void initialize(Composite parent, RentalAgency defaultAgency, IEclipseContext context ) {
+	public void initialize(
+			Composite parent,
+			RentalAgency defaultAgency,
+			IEclipseContext context,
+			ESelectionService ss )
+	{
 		agencies = new TreeViewer( parent );
 		RentalProvider rp = ContextInjectionFactory.make( RentalProvider.class, context );
 		agencies.setContentProvider( rp );
@@ -32,5 +39,9 @@ public class RentalAgencyView {
 		arr[2].setName("Bordeaux");
 		arr[3].setName("Marseille");
 		agencies.setInput( Arrays.asList( arr ));
+		agencies.addSelectionChangedListener(event -> {
+			IStructuredSelection sel = (IStructuredSelection) event.getSelection();
+			ss.setSelection( sel.size() < 2 ? sel.getFirstElement() : sel.toArray());
+		});
 	}
 }
