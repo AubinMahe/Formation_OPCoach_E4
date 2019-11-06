@@ -4,8 +4,9 @@ import java.util.Arrays;
 
 import javax.annotation.PostConstruct;
 
+import org.eclipse.e4.core.contexts.ContextInjectionFactory;
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 
 import com.opcoach.training.rental.RentalAgency;
@@ -16,9 +17,9 @@ public class RentalAgencyView {
 	private TreeViewer agencies;
 
 	@PostConstruct
-	public void initialize(Composite parent, RentalAgency defaultAgency ) {
+	public void initialize(Composite parent, RentalAgency defaultAgency, IEclipseContext context ) {
 		agencies = new TreeViewer( parent );
-		RentalProvider rp = new RentalProvider();
+		RentalProvider rp = ContextInjectionFactory.make( RentalProvider.class, context );
 		agencies.setContentProvider( rp );
 		agencies.setLabelProvider( rp );
 		RentalAgency[] arr = new RentalAgency[] {

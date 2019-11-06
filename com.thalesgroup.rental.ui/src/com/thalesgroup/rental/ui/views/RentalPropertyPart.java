@@ -27,7 +27,7 @@ public class RentalPropertyPart {
 	public void createContent(
 			Composite parent,
 			RentalAgency agency,
-			@Named(IRentalAgencyAddon.DEFAULT_AGENCY) int agencyIndex )
+			@Named(IRentalUIConstants.DEFAULT_AGENCY) int agencyIndex )
 	{
 		parent.setLayout( new GridLayout( 1, false ));
 		

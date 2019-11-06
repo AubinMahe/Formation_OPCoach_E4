@@ -2,31 +2,31 @@ package com.thalesgroup.rental.ui.views;
 
 import java.util.Collection;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 import com.opcoach.training.rental.Customer;
+import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
-public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider {
-
-	public static final String LOCATIONS = "Locations";
-	public static final String CUSTOMERS = "Customers";
+public class RentalProvider
+	extends LabelProvider
+	implements ITreeContentProvider, IColorProvider, IRentalUIConstants
+{
+	public static final String LOCATIONS      = "Locations";
+	public static final String CUSTOMERS      = "Customers";
 	public static final String OBJETS_A_LOUER = "Objets à louer";
-	
-	@Override
-	public Object[] getElements(Object inputElement) {
-		if( inputElement instanceof Collection<?> ) {
-			return ((Collection<?>) inputElement).toArray();
-		}
-		return null;
-	}
 	
 	class Node {
 
@@ -51,6 +51,18 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		public String toString() {
 			return label;
 		}
+	}
+	
+	@Inject
+	@Named(RENTAL_UI_IMG_REGISTRY)
+	private ImageRegistry registry;
+	
+	@Override
+	public Object[] getElements(Object inputElement) {
+		if( inputElement instanceof Collection<?> ) {
+			return ((Collection<?>) inputElement).toArray();
+		}
+		return null;
 	}
 
 	@Override
@@ -110,6 +122,23 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 
 	@Override
 	public Color getBackground(Object element) {
+		return null;
+	}
+	
+	@Override
+	public Image getImage(Object element) {
+		if( element instanceof RentalAgency ) {
+			return registry.get( IMG_AGENCY );
+		}
+		if( element instanceof Customer ) {
+			return registry.get( IMG_CUSTOMER );
+		}
+		if( element instanceof Rental ) {
+			return registry.get( IMG_RENTALS );
+		}
+		if( element instanceof RentalObject ) {
+			return registry.get( IMG_RENTAL_OBJECT );
+		}
 		return null;
 	}
 }
