@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.thalesgroup.rental.ui.e3.category1"
+            name="Rental">
+      </category>
+   </extension>
+
+</fragment>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: E3
+Bundle-SymbolicName: com.thalesgroup.rental.ui.e3;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: THALESGROUP
+Fragment-Host: com.thalesgroup.rental.ui
+Automatic-Module-Name: com.thalesgroup.rental.ui.e3
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui
