@@ -1,10 +1,12 @@
  
 package com.thalesgroup.rental.ui.views;
 
-import java.util.Locale;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -14,20 +16,19 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
 import com.opcoach.training.rental.Rental;
-import com.thalesgroup.rental.core.RentalCoreActivator;
+import com.opcoach.training.rental.RentalAgency;
 
 public class RentalPropertyPart {
 
 	private Label rentedObjectLabel, customerNameLabel, startDateLabel, endDateLabel;
 	private Label from, to;
 
-	@Inject
-	public RentalPropertyPart() {
-		
-	}
-	
 	@PostConstruct
-	public void createContent(Composite parent) {
+	public void createContent(
+			Composite parent,
+			RentalAgency agency,
+			@Named(IRentalAgencyAddon.DEFAULT_AGENCY) int agencyIndex )
+	{
 		parent.setLayout( new GridLayout( 1, false ));
 		
 		Group infoGroup = new Group( parent, SWT.NONE );
@@ -77,13 +78,13 @@ public class RentalPropertyPart {
 		to = new Label(dateGroup, SWT.BORDER);
 		to.setText("22/03/2011");
 
-		setRental( RentalCoreActivator.getDefaultAgency().getRentals().get( 0 ));
+		setRental( agency.getRentals().get( agencyIndex ));
 	}
-	
+
 	public void setRental( Rental rental ) {
-		System.out.println( Locale.getDefault());
 		rentedObjectLabel.setText( rental.getRentedObject().getName());
 		customerNameLabel.setText( rental.getCustomer().getDisplayName());
+		DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 		from.setText( rental.getStartDate().toString());
 		to.setText( rental.getStartDate().toString());
 	}
