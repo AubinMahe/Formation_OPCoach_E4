@@ -11,6 +11,12 @@
         <tags>ViewMenu</tags>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_INoWwAFLEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handledmenuitem.proposde" label="&#xe0; propos de..." iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Agency.png" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
       </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_j-FJcAFMEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.popupmenu.pop" label="Pop !">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_nGazYAFMEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handledmenuitem.about" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
+      </menus>
+      <toolbar xmi:id="_S_IDEAFOEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_T4Tt0AFOEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handledtoolitem.0" iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Agency.png" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
+      </toolbar>
     </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_CzI5gACGEeqhePZMmpMmLQ" featurename="addons" parentElementId="xpath:/">
@@ -36,5 +42,18 @@
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_rnFNEAFKEeqpdZ7QIj4S3w" featurename="handlers" parentElementId="xpath:/">
     <elements xsi:type="commands:Handler" xmi:id="_0RAQQAFKEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handler.0" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.commands.Handler" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_TUu8IAFNEeqpdZ7QIj4S3w" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_U_jfMAFNEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.menucontribution.0" positionInParent="after=additions" parentId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_bvOcMAFNEeqpdZ7QIj4S3w" elementId="id.mymenu" label="MyMenu">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_d00PsAFNEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handledmenuitem.0" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
+      </children>
+    </elements>
+    <elements xsi:type="menu:MenuContribution" xmi:id="_pN8EEAFNEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.menucontribution.1" positionInParent="after=save" parentId="file">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_q_eTIAFNEeqpdZ7QIj4S3w" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
+    </elements>
+    <elements xsi:type="menu:MenuContribution" xmi:id="_vtDckAFNEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.menucontribution.2" positionInParent="after=additions" parentId="popup">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_yvnOoAFNEeqpdZ7QIj4S3w" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
+    </elements>
   </fragments>
 </fragment:ModelFragments>
