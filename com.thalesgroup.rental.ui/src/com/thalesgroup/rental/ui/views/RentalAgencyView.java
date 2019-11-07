@@ -3,9 +3,11 @@ package com.thalesgroup.rental.ui.views;
 import java.util.Arrays;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -15,7 +17,8 @@ import org.eclipse.swt.widgets.Composite;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
 
-public class RentalAgencyView {
+@SuppressWarnings("restriction")
+public class RentalAgencyView implements IRentalUIConstants {
 	
 	private static final String MENU_ID = "com.thalesgroup.rental.ui.popupmenu.pop";
 
@@ -48,5 +51,16 @@ public class RentalAgencyView {
 			ss.setSelection( sel.size() < 2 ? sel.getFirstElement() : sel.toArray());
 		});
 		menuService.registerContextMenu( agencies.getControl(), MENU_ID );
+	}
+	
+	@Inject
+	public void prefsHasChanged(
+			@Preference(PREF_CUSTOMER_BACKGROUNDS_COLOR      ) Object customerBgColor,
+			@Preference(PREF_RENTAL_BACKGROUNDS_COLOR        ) Object rentalBgColor,
+			@Preference(PREF_RENTAL_OBJECTS_BACKGROUNDS_COLOR) Object rentalObjectsBgColor )
+	{
+		if( agencies != null ) {
+			agencies.refresh();
+		}
 	}
 }

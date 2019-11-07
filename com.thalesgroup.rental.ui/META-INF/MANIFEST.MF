@@ -13,7 +13,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.e4.core.contexts,
  org.eclipse.e4.core.di,
  org.eclipse.e4.ui.workbench,
- org.eclipse.e4.ui.services
+ org.eclipse.e4.ui.services,
+ com.opcoach.e4.preferences,
+ org.eclipse.ui,
+ org.eclipse.e4.core.di.extensions;bundle-version="0.15.300"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: com.thalesgroup.rental.ui
 Import-Package: javax.annotation;version="1.0.0";resolution:=optional,

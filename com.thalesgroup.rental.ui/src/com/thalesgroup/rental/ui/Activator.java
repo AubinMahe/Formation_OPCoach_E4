@@ -5,6 +5,8 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
+	public static final String PLUGIN_ID = Activator.class.getPackage().getName();
+
 	private static BundleContext context;
 
 	static BundleContext getContext() {
