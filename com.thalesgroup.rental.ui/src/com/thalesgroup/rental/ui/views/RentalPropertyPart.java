@@ -80,6 +80,9 @@ public class RentalPropertyPart {
 
 	@Inject @Optional
 	public void setRental( @Named(IServiceConstants.ACTIVE_SELECTION) Rental rental ) {
+		if( rental == null ) {
+			return;
+		}
 		rentedObjectLabel.setText( rental.getRentedObject().getName());
 		customerNameLabel.setText( rental.getCustomer().getDisplayName());
 		SimpleDateFormat sdf = new SimpleDateFormat();

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_Cb_TIP_pEemDT5h_5usBCA">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_Cb_TIP_pEemDT5h_5usBCA">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ERWSQP_pEemDT5h_5usBCA" featurename="descriptors" parentElementId="xpath:/">
-    <elements xsi:type="basic:PartDescriptor" xmi:id="_QrYxEP_pEemDT5h_5usBCA" elementId="com.thalesgroup.rental.ui.partdescriptor.rental" label="rental" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.views.RentalPropertyPart">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_QrYxEP_pEemDT5h_5usBCA" elementId="com.thalesgroup.rental.ui.partdescriptor.rental" label="rental" iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Rentals.png" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.views.RentalPropertyPart">
       <tags>View</tags>
       <tags>categoryTag:General</tags>
     </elements>
-    <elements xsi:type="basic:PartDescriptor" xmi:id="_lklZAACjEeqhePZMmpMmLQ" elementId="com.thalesgroup.rental.ui.partdescriptor.agencyview" label="agencyView" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.views.RentalAgencyView">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_lklZAACjEeqhePZMmpMmLQ" elementId="com.thalesgroup.rental.ui.partdescriptor.agencyview" label="agencyView" iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.views.RentalAgencyView">
       <tags>View</tags>
+      <menus xmi:id="_HZSvwAFLEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.menu.0">
+        <tags>ViewMenu</tags>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_INoWwAFLEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handledmenuitem.proposde" label="&#xe0; propos de..." iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Agency.png" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
+      </menus>
     </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_CzI5gACGEeqhePZMmpMmLQ" featurename="addons" parentElementId="xpath:/">
@@ -15,14 +19,22 @@
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Tu9F4AFAEeqpdZ7QIj4S3w" featurename="snippets" parentElementId="xpath:/">
     <elements xsi:type="advanced:Perspective" xmi:id="_5Qhp0AFAEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.perspective" selectedElement="_eTYt8AFAEeqpdZ7QIj4S3w" label="RentalPerspective" iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Agency.png">
       <children xsi:type="basic_1:PartSashContainer" xmi:id="_eTYt8AFAEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partsashcontainer.0" horizontal="true">
-        <children xsi:type="basic_1:PartStack" xmi:id="_hM94QAFCEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partstack.0">
-          <children xsi:type="basic_1:CompositePart" xmi:id="_sNABwAFDEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.compositepart.0" label="Rental" iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Agency.png">
+        <children xsi:type="basic_1:PartSashContainer" xmi:id="_A7VYYAFMEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partsashcontainer.1">
+          <children xsi:type="basic_1:PartStack" xmi:id="_7KroYAFLEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partstack.1">
             <children xsi:type="advanced:Placeholder" xmi:id="_hBy_gAFBEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partdescriptor.agencyview" containerData=""/>
-            <children xsi:type="advanced:Placeholder" xmi:id="_ja4hUAFCEeqpdZ7QIj4S3w" elementId="org.eclipse.ui.views.ResourceNavigator"/>
           </children>
+          <children xsi:type="advanced:Placeholder" xmi:id="_ja4hUAFCEeqpdZ7QIj4S3w" elementId="org.eclipse.ui.views.ResourceNavigator"/>
         </children>
-        <children xsi:type="advanced:Placeholder" xmi:id="_o_M68AFBEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partdescriptor.rental"/>
+        <children xsi:type="basic_1:PartStack" xmi:id="_hM94QAFCEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partstack.0">
+          <children xsi:type="advanced:Placeholder" xmi:id="_o_M68AFBEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partdescriptor.rental"/>
+        </children>
       </children>
     </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_6eyBIAFKEeqpdZ7QIj4S3w" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_8LlhMAFKEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.command.about" commandName="About"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_rnFNEAFKEeqpdZ7QIj4S3w" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_0RAQQAFKEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handler.0" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.commands.Handler" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
   </fragments>
 </fragment:ModelFragments>
