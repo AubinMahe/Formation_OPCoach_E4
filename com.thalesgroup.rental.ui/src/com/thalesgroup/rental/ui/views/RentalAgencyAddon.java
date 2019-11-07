@@ -2,15 +2,19 @@
 package com.thalesgroup.rental.ui.views;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
 import com.opcoach.e4.preferences.ScopedPreferenceStore;
+import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
 import com.thalesgroup.rental.ui.Activator;
@@ -38,5 +42,11 @@ public class RentalAgencyAddon implements IRentalUIConstants {
 		context.set( DEFAULT_AGENCY, 1 );
 		context.set( RENTAL_UI_IMG_REGISTRY, getLocalImageRegistry());
 		context.set( RENTAL_PREFS, getScopedPreferenceStore());
+	}
+	
+	@Inject
+	@Optional
+	private void customerCopied( @UIEventTopic(TOPIC_CUSTOMER_COPIED) Customer customer ) {
+		System.err.println( customer );
 	}
 }

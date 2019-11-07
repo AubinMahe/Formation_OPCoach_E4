@@ -14,7 +14,7 @@
       </menus>
       <menus xsi:type="menu:PopupMenu" xmi:id="_j-FJcAFMEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.popupmenu.pop" label="Pop !">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_nGazYAFMEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handledmenuitem.about" label="About" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_2Q7JgAFeEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handledmenuitem.copycustomer" label="Copy Customer" iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Customers.png" command="_DmU9AAFiEeqpdZ7QIj4S3w">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_2Q7JgAFeEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handledmenuitem.copycustomer" label="Copy Customer" iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Customers.png" command="_OA1pgAFhEeqpdZ7QIj4S3w">
           <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="_u8lR0AFhEeqpdZ7QIj4S3w" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.commands.CopyCustomer"/>
         </children>
       </menus>
@@ -47,7 +47,7 @@
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_rnFNEAFKEeqpdZ7QIj4S3w" featurename="handlers" parentElementId="xpath:/">
     <elements xsi:type="commands:Handler" xmi:id="_0RAQQAFKEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handler.0" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.commands.Handler" command="_8LlhMAFKEeqpdZ7QIj4S3w"/>
-    <elements xsi:type="commands:Handler" xmi:id="_OMbLQAFdEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handler.1" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.commands.CopyCustomer" command="_DmU9AAFiEeqpdZ7QIj4S3w"/>
+    <elements xsi:type="commands:Handler" xmi:id="_OMbLQAFdEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.handler.1" contributionURI="bundleclass://com.thalesgroup.rental.ui/com.thalesgroup.rental.ui.commands.CopyCustomer" command="_OA1pgAFhEeqpdZ7QIj4S3w"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_TUu8IAFNEeqpdZ7QIj4S3w" featurename="menuContributions" parentElementId="xpath:/">
     <elements xsi:type="menu:MenuContribution" xmi:id="_U_jfMAFNEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.menucontribution.0" positionInParent="after=additions" parentId="org.eclipse.ui.main.menu">
