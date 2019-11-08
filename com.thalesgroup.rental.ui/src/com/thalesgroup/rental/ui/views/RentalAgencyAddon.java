@@ -4,6 +4,8 @@ package com.thalesgroup.rental.ui.views;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
@@ -48,5 +50,21 @@ public class RentalAgencyAddon implements IRentalUIConstants {
 	@Optional
 	private void customerCopied( @UIEventTopic(TOPIC_CUSTOMER_COPIED) Customer customer ) {
 		System.err.println( customer );
+	}
+	
+	@Inject
+	public void getExtensionsQuickAccess( IExtensionRegistry reg ) {
+		for( IConfigurationElement elt : reg.getConfigurationElementsFor( "org.eclipse.e4.workbench.model" )) {
+			if( elt.getName().equals( "fragment" )) {
+				String attValue = elt.getAttribute( "uri" );
+				System.out.println( "Found this element: " + elt.getName() + " with attr = " + attValue +
+						" in " + elt.getNamespaceIdentifier());
+			}
+			else if( elt.getName().equals( "processor" )) {
+				String attValue = elt.getAttribute( "class" );
+				System.out.println( "Found this element: " + elt.getName() + " with attr = " + attValue +
+						" in " + elt.getNamespaceIdentifier());
+			}
+		}
 	}
 }
