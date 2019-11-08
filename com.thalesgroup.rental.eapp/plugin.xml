@@ -16,6 +16,14 @@
                name="applicationCSS"
                value="platform:/plugin/com.thalesgroup.rental.eapp/css/default.css">
          </property>
+         <property
+               name="appName"
+               value="com.thalesgroup.rental.eapp">
+         </property>
+         <property
+               name="aboutText"
+               value="Super produit de rêve !">
+         </property>
       </product>
    </extension>
 

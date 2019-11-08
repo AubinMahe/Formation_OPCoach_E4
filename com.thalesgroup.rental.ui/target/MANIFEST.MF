@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.thalesgroup.rental.ui
+Bundle-SymbolicName: com.thalesgroup.rental.ui;singleton:=true
+Bundle-Name: Ui
+Bundle-Version: 1.0.0.201911081531
+Require-Bundle: org.eclipse.core.runtime,com.thalesgroup.rental.core,o
+ rg.eclipse.jface,org.eclipse.e4.ui.model.workbench,org.eclipse.e4.cor
+ e.services,org.eclipse.e4.core.contexts,org.eclipse.e4.core.di,org.ec
+ lipse.e4.ui.workbench,org.eclipse.e4.ui.services,com.opcoach.e4.prefe
+ rences,org.eclipse.e4.core.di.extensions,org.eclipse.e4.ui.di
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.thalesgroup.rental.ui.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: THALESGROUP
+Import-Package: javax.annotation;version="1.0.0";resolution:=optional,
+ javax.inject;version="1.0.0"
+

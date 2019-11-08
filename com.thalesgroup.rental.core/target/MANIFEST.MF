@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.thalesgroup.rental.core
+Bundle-SymbolicName: com.thalesgroup.rental.core
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore;visibil
+ ity:=reexport
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: THALESGROUP
+Export-Package: com.opcoach.training.rental,com.opcoach.training.renta
+ l.core.helpers,com.thalesgroup.rental.core
+Bundle-Name: Rental
+Bundle-Version: 1.0.0.201911081531
+Bundle-ClassPath: rental.jar,.
+Bundle-Activator: com.thalesgroup.rental.core.RentalCoreActivator
+

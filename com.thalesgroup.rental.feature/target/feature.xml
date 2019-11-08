@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.thalesgroup.rental.feature"
+      label="Feature"
+      version="1.0.0.201911081531"
+      provider-name="THALESGROUP">
+
+   <description url="http://www.example.com/description">
+      EPL
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.e4.ui.model.workbench"/>
+      <import plugin="org.eclipse.e4.core.services"/>
+      <import plugin="org.eclipse.e4.core.contexts"/>
+      <import plugin="org.eclipse.e4.core.di"/>
+      <import plugin="org.eclipse.e4.ui.workbench"/>
+      <import plugin="org.eclipse.e4.ui.services"/>
+      <import plugin="com.opcoach.e4.preferences"/>
+      <import plugin="org.eclipse.e4.core.di.extensions"/>
+      <import plugin="org.eclipse.e4.ui.di"/>
+      <import plugin="javax.inject"/>
+      <import plugin="javax.annotation"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="com.thalesgroup.rental.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="com.thalesgroup.rental.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="com.opcoach.e4.preferences.mainmenu" version="1.2.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="com.thalesgroup.rental.ui"
+         download-size="31"
+         install-size="53"
+         version="1.0.0.201911081531"
+         unpack="false"/>
+
+   <plugin
+         id="com.thalesgroup.rental.core"
+         download-size="78"
+         install-size="85"
+         version="1.0.0.201911081531"
+         unpack="false"/>
+
+   <plugin
+         id="com.thalesgroup.rental.eapp"
+         download-size="11"
+         install-size="20"
+         version="1.0.0.201911081531"
+         unpack="false"/>
+
+</feature>

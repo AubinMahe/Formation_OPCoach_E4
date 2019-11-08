@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.thalesgroup.rental</groupId>
+	<artifactId>com.thalesgroup.rental.parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<description>Parent project for the E4 build</description>
+
+
+	<properties>
+		<tycho-version>1.5.0</tycho-version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- enable tycho build extension -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<!-- <dependency-resolution> <optionalDependencies>ignore</optionalDependencies> 
+						</dependency-resolution> -->
+					<target>
+						<artifact>
+							<groupId>com.thalesgroup.rental</groupId>
+							<artifactId>com.thalesgroup.rental.tp</artifactId>
+							<version>4.13.0-SNAPSHOT</version>
+						</artifact>
+					</target>
+					<environments>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+	<!-- the modules that should be built together -->
+	<modules>
+		<module>com.thalesgroup.rental.tp</module>
+		<module>com.thalesgroup.rental.core</module>
+		<module>com.thalesgroup.rental.ui</module>
+		<module>com.thalesgroup.rental.eapp</module>
+		<module>com.thalesgroup.rental.feature</module>
+	</modules>
+
+</project>
