@@ -28,14 +28,11 @@
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Tu9F4AFAEeqpdZ7QIj4S3w" featurename="snippets" parentElementId="xpath:/" positionInList="first">
     <elements xsi:type="advanced:Perspective" xmi:id="_5Qhp0AFAEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.perspective" selectedElement="_eTYt8AFAEeqpdZ7QIj4S3w" label="RentalPerspective" iconURI="platform:/plugin/com.thalesgroup.rental.ui/icons/Agency.png">
-      <children xsi:type="basic_1:PartSashContainer" xmi:id="_eTYt8AFAEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partsashcontainer.0" horizontal="true">
-        <children xsi:type="basic_1:PartSashContainer" xmi:id="_A7VYYAFMEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partsashcontainer.1">
-          <children xsi:type="basic_1:PartStack" xmi:id="_7KroYAFLEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partstack.1">
-            <children xsi:type="advanced:Placeholder" xmi:id="_hBy_gAFBEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partdescriptor.agencyview" containerData=""/>
-          </children>
-          <children xsi:type="advanced:Placeholder" xmi:id="_ja4hUAFCEeqpdZ7QIj4S3w" elementId="org.eclipse.ui.views.ResourceNavigator"/>
+      <children xsi:type="basic_1:PartSashContainer" xmi:id="_eTYt8AFAEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partsashcontainer.0" selectedElement="_7KroYAFLEeqpdZ7QIj4S3w" horizontal="true">
+        <children xsi:type="basic_1:PartStack" xmi:id="_7KroYAFLEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partstack.1" containerData="100" selectedElement="_hBy_gAFBEeqpdZ7QIj4S3w">
+          <children xsi:type="advanced:Placeholder" xmi:id="_hBy_gAFBEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partdescriptor.agencyview" containerData=""/>
         </children>
-        <children xsi:type="basic_1:PartStack" xmi:id="_hM94QAFCEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partstack.0">
+        <children xsi:type="basic_1:PartStack" xmi:id="_hM94QAFCEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partstack.0" containerData="100" selectedElement="_o_M68AFBEeqpdZ7QIj4S3w">
           <children xsi:type="advanced:Placeholder" xmi:id="_o_M68AFBEeqpdZ7QIj4S3w" elementId="com.thalesgroup.rental.ui.partdescriptor.rental"/>
         </children>
       </children>
