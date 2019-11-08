@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+   <extension-point id="palette" name="palette" schema="schema/palette.exsd"/>
 
    <extension
          id="com.thalesgroup.rental.ui.fragment"
@@ -11,6 +12,12 @@
    <extension
          point="com.opcoach.e4.preferences.e4PreferencePages">
       <page
+            class="com.thalesgroup.rental.ui.prefs.PalettesPage"
+            id="com.thalesgroup.rental.ui.pagepalette"
+            name="Palettes">
+      </page>
+      <page
+            category="com.thalesgroup.rental.ui.pagepalette"
             class="com.thalesgroup.rental.ui.prefs.ColorPreferencePage"
             id="com.thalesgroup.rental.ui.prefs.colors"
             name="Rental Colors">
@@ -21,6 +28,19 @@
       <initializer
             class="com.thalesgroup.rental.ui.PreferencesInitializer">
       </initializer>
+   </extension>
+   <extension
+         point="com.thalesgroup.rental.ui.palette">
+      <palette
+            id="com.thalesgroup.rental.ui.palettemoche"
+            name="Moche"
+            palette_class="com.thalesgroup.rental.ui.PaletteMoche">
+      </palette>
+      <palette
+            id="com.thalesgroup.rental.ui.default"
+            name="Par défaut"
+            palette_class="com.thalesgroup.rental.ui.DefaultPalette">
+      </palette>
    </extension>
 
 </plugin>

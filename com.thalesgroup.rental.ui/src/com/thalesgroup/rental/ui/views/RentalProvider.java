@@ -21,6 +21,7 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
+import com.thalesgroup.rental.ui.Palette;
 
 public class RentalProvider
 	extends LabelProvider
@@ -103,6 +104,12 @@ public class RentalProvider
 	@Named(RENTAL_PREFS)
 	private ScopedPreferenceStore prefs;
 	
+	private Palette palette;
+	
+	public void setPalette(Palette palette) {
+		this.palette = palette;
+	}
+	
 	@Override
 	public Object[] getElements(Object inputElement) {
 		if( inputElement instanceof Collection<?> ) {
@@ -158,34 +165,14 @@ public class RentalProvider
 		return super.getText(element);
 	}
 
-	private Color getColor( String prefKey ) {
-		String rgbKey = prefs.getString( prefKey ); 
-		ColorRegistry colorRegistry = JFaceResources.getColorRegistry();
-		Color col = colorRegistry.get( rgbKey );
-		if( col == null ) {
-			colorRegistry.put( rgbKey, StringConverter.asRGB( rgbKey ));
-			col = colorRegistry.get( rgbKey );
-		}
-		return col;
-	}
-	
 	@Override
 	public Color getForeground(Object element) {
-		return null;
+		return palette.getProvider().getForeground(element);
 	}
 
 	@Override
 	public Color getBackground(Object element) {
-		if( element instanceof Customer ) {
-			return getColor( PREF_CUSTOMER_BACKGROUNDS_COLOR );
-		}
-		if( element instanceof Rental ) {
-			return getColor( PREF_RENTAL_BACKGROUNDS_COLOR );
-		}
-		if( element instanceof RentalObject ) {
-			return getColor( PREF_RENTAL_OBJECTS_BACKGROUNDS_COLOR );
-		}
-		return null;
+		return palette.getProvider().getBackground(element);
 	}
 	
 	@Override

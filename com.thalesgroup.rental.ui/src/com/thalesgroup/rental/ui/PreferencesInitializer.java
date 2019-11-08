@@ -14,5 +14,6 @@ public class PreferencesInitializer extends AbstractPreferenceInitializer implem
 		prefs.put( PREF_CUSTOMER_BACKGROUNDS_COLOR      , "0,0,255" );
 		prefs.put( PREF_RENTAL_BACKGROUNDS_COLOR        , "0,255,0" );
 		prefs.put( PREF_RENTAL_OBJECTS_BACKGROUNDS_COLOR, "255,0,0" );
+		prefs.put( PREF_PALETTE, "com.thalesgroup.rental.ui.default" );
 	}
 }
